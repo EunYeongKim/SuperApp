@@ -5,16 +5,18 @@ protocol FinanceHomeDependency: Dependency {
   // created by this RIB.
 }
 
-final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashboardDependency {
-/// 자식 리블렛에서는 값을 읽을수만 있는 readonly publisher를 넘겨줘야함
+final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashboardDependency, CardOnFileDashboardDependency {
+	let cardsOnFileRepository: CardOnFileRepository
 	var balance: ReadOnlyCurrentValuePublisher<Double> { balancePublisher }
-/// 잔액을 update하고 싶을때 쓰는 publisher
+
 	private let balancePublisher: CurrentValuePublisher<Double>
 
   init(
 	dependency: FinanceHomeDependency,
-	balance: CurrentValuePublisher<Double>
+	balance: CurrentValuePublisher<Double>,
+	cardOnFileRepository: CardOnFileRepository
   ) {
+	  self.cardsOnFileRepository = cardOnFileRepository
 	  self.balancePublisher = balance
 	  super.init(dependency: dependency)
   }
@@ -37,18 +39,21 @@ final class FinanceHomeBuilder: Builder<FinanceHomeDependency>, FinanceHomeBuild
 
     let component = FinanceHomeComponent(
 		dependency: dependency,
-		balance: balancePublisher
+		balance: balancePublisher,
+		cardOnFileRepository: CardOnFileRepositoryImp()
 	)
     let viewController = FinanceHomeViewController()
     let interactor = FinanceHomeInteractor(presenter: viewController)
     interactor.listener = listener
 
 	  let superPayDashboardBuilder = SuperPayDashboardBuilder(dependency: component)
+	  let cardOnFileBuilder = CardOnFileDashboardBuilder(dependency: component)
 
     return FinanceHomeRouter(
 		interactor: interactor,
 		viewController: viewController,
-		superPayDashboardBuildable: superPayDashboardBuilder
+		superPayDashboardBuildable: superPayDashboardBuilder,
+		cardOnFileDashboardBuildable: cardOnFileBuilder
 	)
   }
 }
