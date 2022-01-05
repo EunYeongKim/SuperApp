@@ -3,6 +3,9 @@ import ModernRIBs
 protocol FinanceHomeInteractable: Interactable, SuperPayDashboardListener, CardOnFileDashboardListener, AddPaymentMethodListener {
   var router: FinanceHomeRouting? { get set }
   var listener: FinanceHomeListener? { get set }
+
+	/// Interactor는 protocol 타입이기 때문에 값을 여기에서 정의해줘야함
+	var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy { get }
 }
 
 protocol FinanceHomeViewControllable: ViewControllable {
@@ -72,6 +75,7 @@ final class FinanceHomeRouter: ViewableRouter<FinanceHomeInteractable, FinanceHo
 
 		/// navigation bar가 필요하기 때문에 navigation bar에 한번 싸서 present
 		let navigation = NavigationControllerable(root: router.viewControllable)
+		navigation.navigationController.presentationController?.delegate = interactor.presentationDelegateProxy
 		viewControllable.present(navigation, animated: true, completion: nil)
 
 		addPaymentRouting = router
