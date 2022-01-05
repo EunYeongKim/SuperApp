@@ -3,6 +3,9 @@ import ModernRIBs
 protocol FinanceHomeRouting: ViewableRouting {
 	func attachSuperPayDashboard()
 	func attachCardOnFileDashboard()
+
+	func attachAddPaymentMethod()
+	func detachAddPaymentMethod()
 }
 
 protocol FinanceHomePresentable: Presentable {
@@ -38,4 +41,14 @@ final class FinanceHomeInteractor: PresentableInteractor<FinanceHomePresentable>
     super.willResignActive()
     // TODO: Pause any business logic.
   }
+
+	// MARK: - CardOnFileDashboardListener
+	func cardOnFileDashboardDidTapAddPaymentMethod() {
+		router?.attachAddPaymentMethod()
+	}
+
+	// MARK: - AddPaymentMethodListener
+	func addPaymentMethodDidTapClose() {
+		router?.detachAddPaymentMethod()
+	}
 }
