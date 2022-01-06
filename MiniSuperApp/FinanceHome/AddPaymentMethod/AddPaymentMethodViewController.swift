@@ -13,6 +13,7 @@ protocol AddPaymentMethodPresentableListener: AnyObject {
     // business logic, such as signIn(). This protocol is implemented by the corresponding
     // interactor class.
 	func didTapClose()
+	func didTapConfirm(with number: String, cvc: String, expiry: String)
 }
 
 final class AddPaymentMethodViewController: UIViewController, AddPaymentMethodPresentable, AddPaymentMethodViewControllable {
@@ -120,7 +121,11 @@ final class AddPaymentMethodViewController: UIViewController, AddPaymentMethodPr
 
 	@objc
 	private func didTapAddCard() {
-
+		if let number = cardNumberTextField.text,
+		   let cvc = securityTextField.text,
+		   let expiry = expirationTextField.text {
+			listener?.didTapConfirm(with: number, cvc: cvc, expiry: expiry)
+		}
 	}
 
 	@objc
