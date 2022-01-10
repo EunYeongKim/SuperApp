@@ -28,6 +28,7 @@ protocol TopupListener: AnyObject {
 
 protocol TopupInteractorDependency {
 	var cardsOnFileRepository: CardOnFileRepository { get }
+	var paymentMethodStream: CurrentValuePublisher<PaymentMethod> { get }
 }
 
 final class TopupInteractor: Interactor, TopupInteractable, AddPaymentMethodListener, AdaptivePresentationControllerDelegate {
@@ -56,12 +57,13 @@ final class TopupInteractor: Interactor, TopupInteractable, AddPaymentMethodList
         super.didBecomeActive()
         // TODO: Implement business logic here.
 
-		if dependency.cardsOnFileRepository.cardOnFile.value.isEmpty {
+		if let card = dependency.cardsOnFileRepository.cardOnFile.value.first {
+			// 금액 입력 화면
+			dependency.paymentMethodStream.send(card)
+			router?.attachEnterAmount()
+		} else {
 			// 카드 추가 화면
 			router?.attachAddPaymentMethod()
-		} else {
-			// 금액 입력 화면
-			router?.attachEnterAmount()
 		}
 
     }
@@ -98,6 +100,17 @@ final class TopupInteractor: Interactor, TopupInteractable, AddPaymentMethodList
 
 	// CardOnFileListener
 	func cardOnFileDidTapClose() {
+		router?.detachCardOnFile()
+	}
+
+	func cardOnFileDidTapAddCard() {
+		// attach add card
+	}
+
+	func cardOnFileDidSelect(at index: Int) {
+		if let selected = paymentMethods[safe: index] {
+			dependency.paymentMethodStream.send(selected)
+		}
 		router?.detachCardOnFile()
 	}
 }
