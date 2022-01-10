@@ -7,7 +7,7 @@
 
 import ModernRIBs
 
-protocol TopupInteractable: Interactable, AddPaymentMethodListener, EnterAmountListener {
+protocol TopupInteractable: Interactable, AddPaymentMethodListener, EnterAmountListener, CardOnFileListener {
     var router: TopupRouting? { get set }
     var listener: TopupListener? { get set }
 
@@ -31,12 +31,17 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
 	private let enterAmountBuildable: EnterAmountBuildable
 	private var enterAmountRouting: Routing?
 
+	private let cardOnFileBuildable: CardOnFileBuildable
+	private var cardOnFileRouting: Routing?
+
     init(
 		interactor: TopupInteractable,
 		viewController: ViewControllable,
 		addPaymentMethodBuildable: AddPaymentMethodBuildable,
-		enterAmountBuildable: EnterAmountBuildable
+		enterAmountBuildable: EnterAmountBuildable,
+		cardOnFileBuildable: CardOnFileBuildable
 	) {
+		self.cardOnFileBuildable = cardOnFileBuildable
 		self.enterAmountBuildable = enterAmountBuildable
 		self.addPaymentMethodBuildable = addPaymentMethodBuildable
         self.viewController = viewController
@@ -92,8 +97,31 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
 
 		dismissPresentedNavigation(completion: nil)
 		detachChild(router)
-		
+
 		enterAmountRouting = nil
+	}
+
+	func attachCardOnFile() {
+		if cardOnFileRouting != nil {
+			return
+		}
+
+		let router = cardOnFileBuildable.build(withListener: interactor)
+		navigationControllable?.pushViewController(router.viewControllable, animated: true)
+		attachChild(router)
+
+		cardOnFileRouting = router
+	}
+
+	func detachCardOnFile() {
+		guard let router = cardOnFileRouting else {
+			return
+		}
+
+		navigationControllable?.popViewController(animated: true)
+		detachChild(router)
+
+		cardOnFileRouting = nil
 	}
 
     // MARK: - Private

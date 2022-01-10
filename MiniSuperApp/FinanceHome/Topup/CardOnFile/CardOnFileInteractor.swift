@@ -1,5 +1,5 @@
 //
-//  EnterAmountInteractor.swift
+//  CardOnFileInteractor.swift
 //  MiniSuperApp
 //
 //  Created by 60080252 on 2022/01/10.
@@ -7,30 +7,28 @@
 
 import ModernRIBs
 
-protocol EnterAmountRouting: ViewableRouting {
+protocol CardOnFileRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
 }
 
-protocol EnterAmountPresentable: Presentable {
-    var listener: EnterAmountPresentableListener? { get set }
+protocol CardOnFilePresentable: Presentable {
+    var listener: CardOnFilePresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
 }
 
-protocol EnterAmountListener: AnyObject {
+protocol CardOnFileListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
-
-	func enterAmountDidTapClose()
-	func enterAmountDidTapPaymentMethod()
+	func cardOnFileDidTapClose()
 }
 
-final class EnterAmountInteractor: PresentableInteractor<EnterAmountPresentable>, EnterAmountInteractable, EnterAmountPresentableListener {
+final class CardOnFileInteractor: PresentableInteractor<CardOnFilePresentable>, CardOnFileInteractable, CardOnFilePresentableListener {
 
-    weak var router: EnterAmountRouting?
-    weak var listener: EnterAmountListener?
+    weak var router: CardOnFileRouting?
+    weak var listener: CardOnFileListener?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: EnterAmountPresentable) {
+    override init(presenter: CardOnFilePresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -45,16 +43,12 @@ final class EnterAmountInteractor: PresentableInteractor<EnterAmountPresentable>
         // TODO: Pause any business logic.
     }
 
-	// EnterAmountPresentableListener
+	// CardOnFilePresentableListener
 	func didTapClose() {
-		listener?.enterAmountDidTapClose()
+		listener?.cardOnFileDidTapClose()
 	}
 
-	func didTapPaymentMethod() {
-		listener?.enterAmountDidTapPaymentMethod()
-	}
-
-	func didTapTopup(with amount: Double) {
+	func didSelectItem(at: Int) {
 
 	}
 }
