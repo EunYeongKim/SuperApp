@@ -76,7 +76,10 @@ final class FinanceHomeRouter: ViewableRouter<FinanceHomeInteractable, FinanceHo
 			return
 		}
 
-		let router = addPaymentMethodBuildable.build(withListener: interactor)
+		let router = addPaymentMethodBuildable.build(
+			withListener: interactor,
+			closeButtonType: .close
+		)
 
 		/// navigation bar가 필요하기 때문에 navigation bar에 한번 싸서 present
 		let navigation = NavigationControllerable(root: router.viewControllable)
