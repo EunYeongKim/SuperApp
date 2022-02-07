@@ -1,4 +1,5 @@
 import ModernRIBs
+import FinanceRepository
 
 protocol AppHomeDependency: Dependency {
 	var cardsOnFileRepository: CardOnFileRepository { get }
