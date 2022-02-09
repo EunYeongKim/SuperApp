@@ -14,6 +14,8 @@
 		28C4BA2227B1003000C0A625 /* RIBsUtil in Frameworks */ = {isa = PBXBuildFile; productRef = 28C4BA2127B1003000C0A625 /* RIBsUtil */; };
 		28C4BA2427B1003000C0A625 /* SuperUI in Frameworks */ = {isa = PBXBuildFile; productRef = 28C4BA2327B1003000C0A625 /* SuperUI */; };
 		9169647727B234F600A2C8E9 /* FinanceHome in Frameworks */ = {isa = PBXBuildFile; productRef = 9169647627B234F600A2C8E9 /* FinanceHome */; };
+		91975D7F27B35412005B82F5 /* AppRootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91975D7E27B35412005B82F5 /* AppRootComponent.swift */; };
+		91975D8127B3548A005B82F5 /* TransportHomeImp in Frameworks */ = {isa = PBXBuildFile; productRef = 91975D8027B3548A005B82F5 /* TransportHomeImp */; };
 		91A6AD5D27B2437F00666E0C /* ProfileHome in Frameworks */ = {isa = PBXBuildFile; productRef = 91A6AD5C27B2437F00666E0C /* ProfileHome */; };
 		91A969C327B23B8900153AA8 /* TransportHome in Frameworks */ = {isa = PBXBuildFile; productRef = 91A969C227B23B8900153AA8 /* TransportHome */; };
 		91A969C527B23EC700153AA8 /* AppHome in Frameworks */ = {isa = PBXBuildFile; productRef = 91A969C427B23EC700153AA8 /* AppHome */; };
@@ -35,6 +37,7 @@
 		28C4BA1527ABC5A100C0A625 /* Transport */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Transport; sourceTree = "<group>"; };
 		28C4BA1627ABC64C00C0A625 /* Profile */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Profile; sourceTree = "<group>"; };
 		28C4BA1727ABC66E00C0A625 /* Platform */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Platform; sourceTree = "<group>"; };
+		91975D7E27B35412005B82F5 /* AppRootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootComponent.swift; sourceTree = "<group>"; };
 		F57EBE522738468700FE9319 /* Array+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		F5829F5526DB2BC400BFA8CD /* MiniSuperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSuperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91975D8127B3548A005B82F5 /* TransportHomeImp in Frameworks */,
 				9169647727B234F600A2C8E9 /* FinanceHome in Frameworks */,
 				91A969C327B23B8900153AA8 /* TransportHome in Frameworks */,
 				28C4BA2027B1003000C0A625 /* CombineUtil in Frameworks */,
@@ -127,6 +131,7 @@
 				F5829F7226DB34AA00BFA8CD /* AppRootBuilder.swift */,
 				F5829F7326DB34AA00BFA8CD /* AppRootInteractor.swift */,
 				F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */,
+				91975D7E27B35412005B82F5 /* AppRootComponent.swift */,
 			);
 			path = AppRoot;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 				91A969C227B23B8900153AA8 /* TransportHome */,
 				91A969C427B23EC700153AA8 /* AppHome */,
 				91A6AD5C27B2437F00666E0C /* ProfileHome */,
+				91975D8027B3548A005B82F5 /* TransportHomeImp */,
 			);
 			productName = SuperRedApp;
 			productReference = F5829F5526DB2BC400BFA8CD /* MiniSuperApp.app */;
@@ -227,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5829F7626DB34AA00BFA8CD /* AppRootBuilder.swift in Sources */,
+				91975D7F27B35412005B82F5 /* AppRootComponent.swift in Sources */,
 				F5829F7726DB34AA00BFA8CD /* AppRootInteractor.swift in Sources */,
 				F57F6AFE26DB4CD700C0117D /* RootTabBarController.swift in Sources */,
 				F5829F5926DB2BC400BFA8CD /* AppDelegate.swift in Sources */,
@@ -472,6 +479,10 @@
 		9169647627B234F600A2C8E9 /* FinanceHome */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FinanceHome;
+		};
+		91975D8027B3548A005B82F5 /* TransportHomeImp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TransportHomeImp;
 		};
 		91A6AD5C27B2437F00666E0C /* ProfileHome */ = {
 			isa = XCSwiftPackageProductDependency;

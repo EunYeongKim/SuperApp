@@ -10,22 +10,6 @@ protocol AppRootDependency: Dependency {
   // created by this RIB.
 }
 
-final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency, FinanceHomeDependency, ProfileHomeDependency  {
-	var cardsOnFileRepository: CardOnFileRepository
-	var superPayRepository: SuperPayRepository
-
-	init(
-		dependency: AppRootDependency,
-		cardsOnFileRepository: CardOnFileRepository,
-		superPayRepository: SuperPayRepository
-	) {
-		self.cardsOnFileRepository = cardsOnFileRepository
-		self.superPayRepository = superPayRepository
-
-		super.init(dependency: dependency)
-	}
-}
-
 // MARK: - Builder
 
 protocol AppRootBuildable: Buildable {

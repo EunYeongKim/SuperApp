@@ -2,6 +2,7 @@ import ModernRIBs
 import FinanceRepository
 import CombineUtil
 import Topup
+import TransportHome
 
 public protocol TransportHomeDependency: Dependency {
 	var cardsOnFileRepository: CardOnFileRepository { get }
@@ -24,10 +25,6 @@ final class TransportHomeComponent: Component<TransportHomeDependency>, Transpor
 }
 
 // MARK: - Builder
-
-public protocol TransportHomeBuildable: Buildable {
-  func build(withListener listener: TransportHomeListener) -> ViewableRouting
-}
 
 public final class TransportHomeBuilder: Builder<TransportHomeDependency>, TransportHomeBuildable {
   
