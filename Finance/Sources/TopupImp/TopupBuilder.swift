@@ -10,6 +10,7 @@ import FinanceRepository
 import AddPaymentMethod
 import CombineUtil
 import FinanceEntity
+import Topup
 
 public protocol TopupDependency: Dependency {
     var topupBaseViewController: ViewControllable { get }
@@ -36,10 +37,6 @@ final class TopupComponent: Component<TopupDependency>, TopupInteractorDependenc
 }
 
 // MARK: - Builder
-
-public protocol TopupBuildable: Buildable {
-    func build(withListener listener: TopupListener) -> Routing
-}
 
 public final class TopupBuilder: Builder<TopupDependency>, TopupBuildable {
 

@@ -13,27 +13,38 @@ import ProfileHome
 import FinanceRepository
 import TransportHome
 import TransportHomeImp
+import Topup
+import TopupImp
 
 final class AppRootComponent: Component<AppRootDependency>,
                               AppHomeDependency,
                               FinanceHomeDependency,
                               ProfileHomeDependency,
-                              TransportHomeDependency {
+                              TransportHomeDependency,
+                              TopupDependency {
     var cardsOnFileRepository: CardOnFileRepository
     var superPayRepository: SuperPayRepository
+    var topupBaseViewController: ViewControllable { rootViewController.topViewControllable }
+    
+    private let rootViewController: ViewControllable
     
     lazy var transportHomeBuildable: TransportHomeBuildable = {
         return TransportHomeBuilder(dependency: self)
     }()
     
+    lazy var topupBuildable: TopupBuildable = {
+        return TopupBuilder(dependency: self)
+    }()
+    
     init(
         dependency: AppRootDependency,
         cardsOnFileRepository: CardOnFileRepository,
-        superPayRepository: SuperPayRepository
+        superPayRepository: SuperPayRepository,
+        rootViewController: ViewControllable
     ) {
         self.cardsOnFileRepository = cardsOnFileRepository
         self.superPayRepository = superPayRepository
-        
+        self.rootViewController = rootViewController
         super.init(dependency: dependency)
     }
 }
