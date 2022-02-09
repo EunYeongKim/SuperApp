@@ -13,6 +13,7 @@
 		28C4BA2027B1003000C0A625 /* CombineUtil in Frameworks */ = {isa = PBXBuildFile; productRef = 28C4BA1F27B1003000C0A625 /* CombineUtil */; };
 		28C4BA2227B1003000C0A625 /* RIBsUtil in Frameworks */ = {isa = PBXBuildFile; productRef = 28C4BA2127B1003000C0A625 /* RIBsUtil */; };
 		28C4BA2427B1003000C0A625 /* SuperUI in Frameworks */ = {isa = PBXBuildFile; productRef = 28C4BA2327B1003000C0A625 /* SuperUI */; };
+		914A8B4627B382DD00977A58 /* AddPaymentMethodImp in Frameworks */ = {isa = PBXBuildFile; productRef = 914A8B4527B382DD00977A58 /* AddPaymentMethodImp */; };
 		9169647727B234F600A2C8E9 /* FinanceHome in Frameworks */ = {isa = PBXBuildFile; productRef = 9169647627B234F600A2C8E9 /* FinanceHome */; };
 		917C4E3727B379FB006C24CB /* TopupImp in Frameworks */ = {isa = PBXBuildFile; productRef = 917C4E3627B379FB006C24CB /* TopupImp */; };
 		91975D7F27B35412005B82F5 /* AppRootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91975D7E27B35412005B82F5 /* AppRootComponent.swift */; };
@@ -60,6 +61,7 @@
 				91975D8127B3548A005B82F5 /* TransportHomeImp in Frameworks */,
 				9169647727B234F600A2C8E9 /* FinanceHome in Frameworks */,
 				91A969C327B23B8900153AA8 /* TransportHome in Frameworks */,
+				914A8B4627B382DD00977A58 /* AddPaymentMethodImp in Frameworks */,
 				28C4BA2027B1003000C0A625 /* CombineUtil in Frameworks */,
 				28C4BA1A27ABC7E900C0A625 /* AddPaymentMethod in Frameworks */,
 				28C4BA1E27B1003000C0A625 /* FinanceRepository in Frameworks */,
@@ -177,6 +179,7 @@
 				91A6AD5C27B2437F00666E0C /* ProfileHome */,
 				91975D8027B3548A005B82F5 /* TransportHomeImp */,
 				917C4E3627B379FB006C24CB /* TopupImp */,
+				914A8B4527B382DD00977A58 /* AddPaymentMethodImp */,
 			);
 			productName = SuperRedApp;
 			productReference = F5829F5526DB2BC400BFA8CD /* MiniSuperApp.app */;
@@ -478,6 +481,10 @@
 		28C4BA2327B1003000C0A625 /* SuperUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SuperUI;
+		};
+		914A8B4527B382DD00977A58 /* AddPaymentMethodImp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AddPaymentMethodImp;
 		};
 		9169647627B234F600A2C8E9 /* FinanceHome */ = {
 			isa = XCSwiftPackageProductDependency;

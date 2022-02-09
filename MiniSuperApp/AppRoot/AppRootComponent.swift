@@ -15,13 +15,16 @@ import TransportHome
 import TransportHomeImp
 import Topup
 import TopupImp
+import AddPaymentMethod
+import AddPaymentMethodImp
 
 final class AppRootComponent: Component<AppRootDependency>,
                               AppHomeDependency,
                               FinanceHomeDependency,
                               ProfileHomeDependency,
                               TransportHomeDependency,
-                              TopupDependency {
+                              TopupDependency,
+                              AddPaymentMethodDependency {
     var cardsOnFileRepository: CardOnFileRepository
     var superPayRepository: SuperPayRepository
     var topupBaseViewController: ViewControllable { rootViewController.topViewControllable }
@@ -34,6 +37,10 @@ final class AppRootComponent: Component<AppRootDependency>,
     
     lazy var topupBuildable: TopupBuildable = {
         return TopupBuilder(dependency: self)
+    }()
+    
+    lazy var addPaymentMethodBuildable: AddPaymentMethodBuildable = {
+        return AddPaymentMethodBuilder(dependency: self)
     }()
     
     init(
