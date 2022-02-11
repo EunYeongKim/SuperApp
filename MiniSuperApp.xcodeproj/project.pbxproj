@@ -18,6 +18,8 @@
 		9175103627B647040090BEDB /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 9175103527B647040090BEDB /* Network */; };
 		9175103827B647040090BEDB /* NetworkImp in Frameworks */ = {isa = PBXBuildFile; productRef = 9175103727B647040090BEDB /* NetworkImp */; };
 		9175103A27B647670090BEDB /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9175103927B647670090BEDB /* BaseURL.swift */; };
+		9175103C27B649AE0090BEDB /* SuperAppURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9175103B27B649AE0090BEDB /* SuperAppURLProtocol.swift */; };
+		9175103E27B64C780090BEDB /* SetupURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9175103D27B64C780090BEDB /* SetupURLProtocol.swift */; };
 		917C4E3727B379FB006C24CB /* TopupImp in Frameworks */ = {isa = PBXBuildFile; productRef = 917C4E3627B379FB006C24CB /* TopupImp */; };
 		91975D7F27B35412005B82F5 /* AppRootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91975D7E27B35412005B82F5 /* AppRootComponent.swift */; };
 		91975D8127B3548A005B82F5 /* TransportHomeImp in Frameworks */ = {isa = PBXBuildFile; productRef = 91975D8027B3548A005B82F5 /* TransportHomeImp */; };
@@ -43,6 +45,8 @@
 		28C4BA1627ABC64C00C0A625 /* Profile */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Profile; sourceTree = "<group>"; };
 		28C4BA1727ABC66E00C0A625 /* Platform */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Platform; sourceTree = "<group>"; };
 		9175103927B647670090BEDB /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		9175103B27B649AE0090BEDB /* SuperAppURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperAppURLProtocol.swift; sourceTree = "<group>"; };
+		9175103D27B64C780090BEDB /* SetupURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupURLProtocol.swift; sourceTree = "<group>"; };
 		91975D7E27B35412005B82F5 /* AppRootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootComponent.swift; sourceTree = "<group>"; };
 		F57EBE522738468700FE9319 /* Array+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */,
 				91975D7E27B35412005B82F5 /* AppRootComponent.swift */,
 				9175103927B647670090BEDB /* BaseURL.swift */,
+				9175103B27B649AE0090BEDB /* SuperAppURLProtocol.swift */,
+				9175103D27B64C780090BEDB /* SetupURLProtocol.swift */,
 			);
 			path = AppRoot;
 			sourceTree = "<group>";
@@ -248,6 +254,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5829F7626DB34AA00BFA8CD /* AppRootBuilder.swift in Sources */,
+				9175103E27B64C780090BEDB /* SetupURLProtocol.swift in Sources */,
+				9175103C27B649AE0090BEDB /* SuperAppURLProtocol.swift in Sources */,
 				91975D7F27B35412005B82F5 /* AppRootComponent.swift in Sources */,
 				F5829F7726DB34AA00BFA8CD /* AppRootInteractor.swift in Sources */,
 				F57F6AFE26DB4CD700C0117D /* RootTabBarController.swift in Sources */,

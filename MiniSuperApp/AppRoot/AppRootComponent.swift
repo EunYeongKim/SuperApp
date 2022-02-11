@@ -49,7 +49,12 @@ final class AppRootComponent: Component<AppRootDependency>,
         dependency: AppRootDependency,
         rootViewController: ViewControllable
     ) {
-        let network = NetworkImp(session: URLSession.shared)
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [SuperAppURLProtocol.self]
+        
+        setupURLProtocol()
+            
+        let network = NetworkImp(session: URLSession(configuration: config))
         
         self.cardsOnFileRepository = CardOnFileRepositoryImp()
         self.superPayRepository = SuperPayRepositoryImp(
