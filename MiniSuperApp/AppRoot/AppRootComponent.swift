@@ -56,7 +56,10 @@ final class AppRootComponent: Component<AppRootDependency>,
             
         let network = NetworkImp(session: URLSession(configuration: config))
         
-        self.cardsOnFileRepository = CardOnFileRepositoryImp()
+        self.cardsOnFileRepository = CardOnFileRepositoryImp(
+            network: network,
+            baseURL: BaseURL().financeBaseURL
+        )
         self.superPayRepository = SuperPayRepositoryImp(
             network: network,
             baseURL: BaseURL().financeBaseURL
