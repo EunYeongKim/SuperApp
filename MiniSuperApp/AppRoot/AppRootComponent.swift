@@ -17,6 +17,8 @@ import Topup
 import TopupImp
 import AddPaymentMethod
 import AddPaymentMethodImp
+import Network
+import NetworkImp
 
 final class AppRootComponent: Component<AppRootDependency>,
                               AppHomeDependency,
@@ -45,12 +47,16 @@ final class AppRootComponent: Component<AppRootDependency>,
     
     init(
         dependency: AppRootDependency,
-        cardsOnFileRepository: CardOnFileRepository,
-        superPayRepository: SuperPayRepository,
         rootViewController: ViewControllable
     ) {
-        self.cardsOnFileRepository = cardsOnFileRepository
-        self.superPayRepository = superPayRepository
+        let network = NetworkImp(session: URLSession.shared)
+        
+        self.cardsOnFileRepository = CardOnFileRepositoryImp()
+        self.superPayRepository = SuperPayRepositoryImp(
+            network: network,
+            baseURL: BaseURL().financeBaseURL
+        )
+        
         self.rootViewController = rootViewController
         super.init(dependency: dependency)
     }

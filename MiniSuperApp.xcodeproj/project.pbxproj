@@ -15,6 +15,9 @@
 		28C4BA2427B1003000C0A625 /* SuperUI in Frameworks */ = {isa = PBXBuildFile; productRef = 28C4BA2327B1003000C0A625 /* SuperUI */; };
 		914A8B4627B382DD00977A58 /* AddPaymentMethodImp in Frameworks */ = {isa = PBXBuildFile; productRef = 914A8B4527B382DD00977A58 /* AddPaymentMethodImp */; };
 		9169647727B234F600A2C8E9 /* FinanceHome in Frameworks */ = {isa = PBXBuildFile; productRef = 9169647627B234F600A2C8E9 /* FinanceHome */; };
+		9175103627B647040090BEDB /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 9175103527B647040090BEDB /* Network */; };
+		9175103827B647040090BEDB /* NetworkImp in Frameworks */ = {isa = PBXBuildFile; productRef = 9175103727B647040090BEDB /* NetworkImp */; };
+		9175103A27B647670090BEDB /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9175103927B647670090BEDB /* BaseURL.swift */; };
 		917C4E3727B379FB006C24CB /* TopupImp in Frameworks */ = {isa = PBXBuildFile; productRef = 917C4E3627B379FB006C24CB /* TopupImp */; };
 		91975D7F27B35412005B82F5 /* AppRootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91975D7E27B35412005B82F5 /* AppRootComponent.swift */; };
 		91975D8127B3548A005B82F5 /* TransportHomeImp in Frameworks */ = {isa = PBXBuildFile; productRef = 91975D8027B3548A005B82F5 /* TransportHomeImp */; };
@@ -39,6 +42,7 @@
 		28C4BA1527ABC5A100C0A625 /* Transport */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Transport; sourceTree = "<group>"; };
 		28C4BA1627ABC64C00C0A625 /* Profile */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Profile; sourceTree = "<group>"; };
 		28C4BA1727ABC66E00C0A625 /* Platform */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Platform; sourceTree = "<group>"; };
+		9175103927B647670090BEDB /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		91975D7E27B35412005B82F5 /* AppRootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootComponent.swift; sourceTree = "<group>"; };
 		F57EBE522738468700FE9319 /* Array+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 				28C4BA1E27B1003000C0A625 /* FinanceRepository in Frameworks */,
 				91A969C527B23EC700153AA8 /* AppHome in Frameworks */,
 				91A6AD5D27B2437F00666E0C /* ProfileHome in Frameworks */,
+				9175103627B647040090BEDB /* Network in Frameworks */,
+				9175103827B647040090BEDB /* NetworkImp in Frameworks */,
 				28C4BA1C27B1003000C0A625 /* FinanceEntity in Frameworks */,
 				28C4BA2427B1003000C0A625 /* SuperUI in Frameworks */,
 				28C4BA2227B1003000C0A625 /* RIBsUtil in Frameworks */,
@@ -136,6 +142,7 @@
 				F5829F7326DB34AA00BFA8CD /* AppRootInteractor.swift */,
 				F57F6AFD26DB4CD700C0117D /* RootTabBarController.swift */,
 				91975D7E27B35412005B82F5 /* AppRootComponent.swift */,
+				9175103927B647670090BEDB /* BaseURL.swift */,
 			);
 			path = AppRoot;
 			sourceTree = "<group>";
@@ -180,6 +187,8 @@
 				91975D8027B3548A005B82F5 /* TransportHomeImp */,
 				917C4E3627B379FB006C24CB /* TopupImp */,
 				914A8B4527B382DD00977A58 /* AddPaymentMethodImp */,
+				9175103527B647040090BEDB /* Network */,
+				9175103727B647040090BEDB /* NetworkImp */,
 			);
 			productName = SuperRedApp;
 			productReference = F5829F5526DB2BC400BFA8CD /* MiniSuperApp.app */;
@@ -246,6 +255,7 @@
 				F5829F7926DB397300BFA8CD /* AppComponent.swift in Sources */,
 				F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */,
 				F5829F7426DB34AA00BFA8CD /* AppRootRouter.swift in Sources */,
+				9175103A27B647670090BEDB /* BaseURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +499,14 @@
 		9169647627B234F600A2C8E9 /* FinanceHome */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FinanceHome;
+		};
+		9175103527B647040090BEDB /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
+		9175103727B647040090BEDB /* NetworkImp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkImp;
 		};
 		917C4E3627B379FB006C24CB /* TopupImp */ = {
 			isa = XCSwiftPackageProductDependency;
